@@ -8,6 +8,11 @@ const peerServer = ExpressPeerServer(server, {
     debug: true
 })
 
+// set the ports of application
+// process.env.PORT lets the port be set by Heroku
+
+const port = process.env.PORT || 3030
+
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
@@ -37,4 +42,4 @@ io.on('connection', socket => {
     })
 })
 
-server.listen(3030)
+server.listen(`${port}`)

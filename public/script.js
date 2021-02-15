@@ -8,10 +8,12 @@ let myVideoStream
 const peer = new Peer(undefined, {
     path: '/peerjs',
     host: '/',
-    port: '443'
+    port: '3030'
 })
 
-const peers = {}
+let peers = {}
+let users = {}
+
 navigator.mediaDevices.getUserMedia({
     video: true,
     audio: true
@@ -43,7 +45,7 @@ navigator.mediaDevices.getUserMedia({
     })
 
     socket.on('createMessage', message => {
-        $('.messages').append(`<li class="message"><b>user</b><br/>${message}</li>`)
+        $('.messages').append(`<li class="message"><b>users</b><br/>${message}</li>`)
         scrollToButton()
     })
 })
@@ -138,4 +140,18 @@ const setPlayVideo = () => {
     <span>Play Video</span>`
 
     document.querySelector('.main__video__button').innerHTML = html
+}
+
+// Display and hide chat window
+const showHideChat = () => {
+    const chat__window = document.querySelector('.main__right')
+    const main__left = document.querySelector('.main__left')
+
+    if (chat__window.style.display === 'flex') {
+        chat__window.style.display = 'none'
+        main__left.style.flex = '1 1 0%'
+    } else {
+        chat__window.style.display = 'flex'
+        main__left.style.flex = '0.8'
+    }
 }

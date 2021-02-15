@@ -15,7 +15,7 @@ body {
 .main__left {
     display: flex;
     flex-direction: column;
-    flex: 0.8;
+    flex: 1;
 }
 
 .main__videos {
@@ -27,7 +27,7 @@ body {
 
 
 .main__right {
-    display: flex;
+    display: none;
     flex-direction: column;
     background: #242324;
     flex: 0.2;

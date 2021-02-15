@@ -1,0 +1,23 @@
+{
+  "name": "node_zoom_clone",
+  "version": "1.0.0",
+  "description": "Zoom Node Clone",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node.js",
+    "zoom",
+    "clone"
+  ],
+  "author": "Ron Vargas",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "peer": "^0.6.1",
+    "socket.io": "^3.1.1",
+    "uuid": "^8.3.2"
+  }
+}
